@@ -1,0 +1,25 @@
+type Car {
+    id: ID!,
+    licencePlate: String,
+    name: String,
+    manufactureDate: String,
+    version: String
+}
+
+input CarInput {
+    id: ID
+    name: String
+    licencePlate: String
+    manufactureDate: String
+    version: Int
+}
+type Query{
+    findAllCar: [Car]
+    findCarById(id: ID ): Car
+    generatePdfABase64(id: ID):String
+
+}
+type Mutation{
+    createCar(car: CarInput):Car
+    updateCar(car : CarInput):Car
+    deleteCar(id : ID) : String
