@@ -21,7 +21,9 @@ public class ApiGraphqlTraineeApplication {
 	public CorsFilter corsFilter() {
 		List<String> origins = new ArrayList<>();
 		origins.add("http://127.0.0.1:5173/");
+		origins.add("http://10.120.0.16:9280/");
 		origins.add("https://trainee-gamma.vercel.app/");
+		origins.add("https://trainee-graphql.vercel.app/");
 
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
