@@ -6,7 +6,7 @@ import com.larissa.apigraphqltrainee.service.CarService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.graphql.data.method.annotation.Arguments;
+import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
@@ -14,55 +14,49 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Controller
+@CrossOrigin("*")
 public class CarController {
 
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Controller
-    public class CarroController  {
         @Autowired
         private CarService carService;
 
-
-        @CrossOrigin("*")
         @QueryMapping
         public List<Car> findAllCar(){
             return carService.findAllCar();
         }
 
-        @CrossOrigin("*")
         @QueryMapping
-        public Car findCarById(@Arguments Long id){
+        public Car findCarById(@Argument Long id){
             return carService.findCarById(id);
         }
 
-        @CrossOrigin("*")
         @MutationMapping
-        public Car createCar(@Arguments CarInput car) {
+        public Car createCar(@Argument CarInput car) {
             return carService.createCar(car);
         }
 
-        @CrossOrigin("*")
+
         @MutationMapping
-        public String deleteCar(@Arguments Long id){
+        public String deleteCar(@Argument Long id){
             return carService.deleteCar(id);
 
         }
 
-        @CrossOrigin("*")
         @MutationMapping
-        public Car updateCar(@Arguments CarInput car) {
+        public Car updateCar(@Argument CarInput car) {
             return carService.updateCar(car);
         }
 
 
-        @CrossOrigin("*")
         @QueryMapping
-        public String generatePdfABase64(@Arguments Long id) throws Exception {
+        public String generatePdfABase64(@Argument Long id) throws Exception {
             return carService.generatePdfABase64(id);
         }
 
 
 
     }
-}
+

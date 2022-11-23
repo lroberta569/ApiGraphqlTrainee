@@ -1,14 +1,11 @@
 package com.larissa.apigraphqltrainee.input;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Data
+@AllArgsConstructor
 public class CarInput {
 
     private Long id;

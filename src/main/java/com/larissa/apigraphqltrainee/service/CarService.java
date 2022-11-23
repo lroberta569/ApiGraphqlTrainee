@@ -23,9 +23,9 @@ public class CarService {
     @Autowired
     CarRepository carroRepository;
 
-    public Car createCar(CarInput carroInput) {
+    public Car createCar(CarInput car) {
         Car novoCarro = new Car();
-        BeanUtils.copyProperties(carroInput, novoCarro);
+        BeanUtils.copyProperties(car, novoCarro);
         return carroRepository.save(novoCarro);
     }
 
