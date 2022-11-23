@@ -1,7 +1,5 @@
 package com.larissa.apigraphqltrainee.controller;
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.larissa.apigraphqltrainee.input.CarInput;
 import com.larissa.apigraphqltrainee.model.Car;
 import com.larissa.apigraphqltrainee.service.CarService;
@@ -21,7 +19,7 @@ public class CarController {
     @NoArgsConstructor
     @AllArgsConstructor
     @Controller
-    public class CarroController implements GraphQLQueryResolver, GraphQLMutationResolver {
+    public class CarroController  {
         @Autowired
         private CarService carService;
 
