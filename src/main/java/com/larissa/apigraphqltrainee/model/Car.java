@@ -20,7 +20,7 @@ public class Car {
     @Column(name = "name")
     private String name;
     @Column(name = "licencePlate")
-    private String licencePlate;
+    private String licensePlate;
     @Column(name = "manufactureDate")
     private String manufactureDate;
     @Version

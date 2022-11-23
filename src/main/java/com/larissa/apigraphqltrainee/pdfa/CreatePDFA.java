@@ -35,7 +35,7 @@ public class CreatePDFA {
             contentStream.newLine();
             contentStream.showText("Nome: " + car.getName());
             contentStream.newLine();
-            contentStream.showText("Placa: " + car.getLicencePlate());
+            contentStream.showText("Placa: " + car.getLicensePlate());
             contentStream.endText();
             contentStream.close();
 
@@ -61,7 +61,7 @@ public class CreatePDFA {
             pdDocumentInformation.setModificationDate(data);
 
             pdDocumentInformation.getCustomMetadataValue("Nome: " + car.getName());
-            pdDocumentInformation.getCustomMetadataValue("Placa: " + car.getLicencePlate());
+            pdDocumentInformation.getCustomMetadataValue("Placa: " + car.getLicensePlate());
 
             PDMetadata metadata = new PDMetadata(doc);
             PDDocumentCatalog catalog = doc.getDocumentCatalog();

@@ -1,6 +1,6 @@
 type Car {
     id: ID!,
-    licencePlate: String,
+    licensePlate: String,
     name: String,
     manufactureDate: String,
     version: Int
@@ -9,7 +9,7 @@ type Car {
 input CarInput {
     id: ID
     name: String
-    licencePlate: String
+    licensePlate: String
     manufactureDate: String
     version: Int
 }

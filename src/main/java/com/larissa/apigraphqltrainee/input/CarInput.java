@@ -10,7 +10,7 @@ public class CarInput {
 
     private Long id;
     private String name;
-    private String licencePlate;
+    private String licensePlate;
     private String manufactureDate;
     private Long version;
 }
