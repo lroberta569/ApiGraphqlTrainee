@@ -14,7 +14,7 @@ import java.util.List;
 public class ApiGraphqlTraineeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiGraphqlTraineeApplication.class, args);
+		SpringApplication.run(gtApplication.class, args);
 	}
 
 	@Bean
