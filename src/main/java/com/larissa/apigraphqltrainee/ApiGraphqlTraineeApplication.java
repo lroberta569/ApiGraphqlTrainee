@@ -20,8 +20,8 @@ public class ApiGraphqlTraineeApplication {
 	@Bean
 	public CorsFilter corsFilter() {
 		List<String> origins = new ArrayList<>();
-		origins.add("*");
-		origins.add("*");
+		origins.add("http://127.0.0.1:5173/");
+		origins.add("https://trainee-gamma.vercel.app/");
 
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
