@@ -39,7 +39,7 @@ public class CreatePDFA {
             contentStream.endText();
             contentStream.close();
 
-            createMetaDataPDFA(doc, car);
+            createMetaDataPDFA(doc, car, page);
 
 
 
@@ -48,8 +48,7 @@ public class CreatePDFA {
 
         }
 
-        public static void createMetaDataPDFA(PDDocument doc, Car car){
-            PDPage page = new PDPage();
+        public static void createMetaDataPDFA(PDDocument doc, Car car, PDPage page){
             doc.addPage(page);
 
             PDDocumentInformation pdDocumentInformation = doc.getDocumentInformation();
