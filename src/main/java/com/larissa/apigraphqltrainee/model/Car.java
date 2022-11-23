@@ -16,14 +16,14 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "NOME")
+    @Column(name = "name")
     private String name;
-    @Column(name = "PLACA")
+    @Column(name = "licencePlate")
     private String licencePlate;
-    @Column(name = "DATA_FABRICACAO")
+    @Column(name = "manufactureDate")
     private String manufactureDate;
     @Version
-    @Column(name = "VERSAO")
+    @Column(name = "version")
     private Long version;
 
 
