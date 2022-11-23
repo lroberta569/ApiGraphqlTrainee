@@ -38,8 +38,8 @@ public class CarController {
 
         @CrossOrigin("*")
         @MutationMapping
-        public Car createCar(@Arguments CarInput carroInput) {
-            return carService.createCar(carroInput);
+        public Car createCar(@Arguments CarInput car) {
+            return carService.createCar(car);
         }
 
         @CrossOrigin("*")
@@ -51,8 +51,8 @@ public class CarController {
 
         @CrossOrigin("*")
         @MutationMapping
-        public Car updateCar(@Arguments CarInput carroInput) {
-            return carService.updateCar(carroInput);
+        public Car updateCar(@Arguments CarInput car) {
+            return carService.updateCar(car);
         }
 
 
