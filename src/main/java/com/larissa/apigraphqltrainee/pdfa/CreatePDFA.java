@@ -39,7 +39,7 @@ public class CreatePDFA {
             contentStream.endText();
             contentStream.close();
 
-            createMetaDataPDFA(doc, car, page);
+            createMetaDataPDFA(doc, car);
 
 
 
@@ -48,8 +48,7 @@ public class CreatePDFA {
 
         }
 
-        public static void createMetaDataPDFA(PDDocument doc, Car car, PDPage page){
-            doc.addPage(page);
+        public static void createMetaDataPDFA(PDDocument doc, Car car){
 
             PDDocumentInformation pdDocumentInformation = doc.getDocumentInformation();
             pdDocumentInformation.setAuthor("LARISSA SILVA");
@@ -70,9 +69,6 @@ public class CreatePDFA {
             ColorProfile(doc, catalog);
             readMetaData(metadata,doc,catalog);
 
-
-
-            doc.addPage(page);
         }
 
         public static void ColorProfile(PDDocument doc, PDDocumentCatalog catalog) {
