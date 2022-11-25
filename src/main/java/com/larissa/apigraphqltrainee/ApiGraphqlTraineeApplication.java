@@ -1,5 +1,10 @@
 package com.larissa.apigraphqltrainee;
 
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +19,7 @@ import java.util.List;
 public class ApiGraphqlTraineeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(gtApplication.class, args);
+		SpringApplication.run(ApiGraphqlTraineeApplication.class, args);
 	}
 
 	@Bean

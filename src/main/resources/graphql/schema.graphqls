@@ -4,6 +4,8 @@ type Car {
     name: String,
     manufactureDate: String,
     version: Int
+    imageCarBase64: String
+    urlImageCar: String
 }
 
 input CarInput {
@@ -12,6 +14,8 @@ input CarInput {
     licensePlate: String
     manufactureDate: String
     version: Int
+    imageCarBase64: String
+    urlImageCar: String
 }
 type Query{
     findAllCar: [Car]
@@ -23,4 +27,5 @@ type Mutation{
     createCar(car: CarInput):Car
     updateCar(car : CarInput):Car
     deleteCar(id : ID) : String
+    ImageCarBase64: String
 }

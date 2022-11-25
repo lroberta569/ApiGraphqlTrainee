@@ -13,4 +13,6 @@ public class CarInput {
     private String licensePlate;
     private String manufactureDate;
     private Long version;
+    private transient String imageCarBase64;
+    private String urlImageCar;
 }

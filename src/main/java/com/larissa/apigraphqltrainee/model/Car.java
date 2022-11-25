@@ -1,5 +1,7 @@
 package com.larissa.apigraphqltrainee.model;
 
+import com.larissa.apigraphqltrainee.service.ImageService;
+import com.larissa.apigraphqltrainee.utils.FileType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,15 +19,27 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name")
     private String name;
-    @Column(name = "licencePlate")
     private String licensePlate;
-    @Column(name = "manufactureDate")
     private String manufactureDate;
     @Version
-    @Column(name = "version")
     private Long version;
+    private transient String imageCarBase64;
+    private String urlImageCar;
 
+    public void setCarImageName(){
+        if(getId() == null){
+            throw new IllegalStateException("Primeiro grave um registro");
+        }
 
+        ImageService imageService = ImageService.get(imageCarBase64);
+        String entension = FileType.of(imageService.getMimeType()).getExtensao();
+
+        this.urlImageCar = String.format("%04d-car.%s", getId(), entension);
+
+    }
+
+    public void imageCarBase64(String s) {
+
+    }
 }
