@@ -1,9 +1,12 @@
 package com.larissa.apigraphqltrainee.controller;
 
 import com.larissa.apigraphqltrainee.input.CarInput;
+import com.larissa.apigraphqltrainee.model.Base64URL;
 import com.larissa.apigraphqltrainee.model.Car;
+import com.larissa.apigraphqltrainee.service.AwsService;
 import com.larissa.apigraphqltrainee.service.CarService;
 import com.larissa.apigraphqltrainee.service.ImageService;
+import com.larissa.apigraphqltrainee.utils.ConvertToBase64;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,7 @@ import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.IOException;
 import java.util.List;
@@ -24,6 +28,8 @@ public class CarController {
 
         @Autowired
         private CarService carService;
+        @Autowired
+        private AwsService awsService;
 
         @QueryMapping
         public List<Car> findAllCar(){
@@ -60,9 +66,6 @@ public class CarController {
         public String generatePdfABase64(@Argument Long id) throws Exception {
             return carService.generatePdfABase64(id);
         }
-
-
-
 
     }
 

@@ -26,6 +26,8 @@ public class CarService {
     CarRepository carroRepository;
     @Autowired
     ImageService storageService;
+    @Autowired
+    AwsService awsService;
 
     @Transactional
     public Car createCar(CarInput car) throws IOException {
@@ -39,7 +41,7 @@ public class CarService {
         if(car.getId() == null){
             newCar.setCarImageName();
         }
-        AwsService.uploadFile(car.getImageCarBase64(), newCar.getUrlImageCar());
+        awsService.uploadFile(car.getImageCarBase64(), newCar.getUrlImageCar());
         return newCar;
     }
 
@@ -73,7 +75,7 @@ public class CarService {
 
     public String fetcCarImageOnAWSS3(String nameCar) throws IOException {
         try {
-           byte [] bytes = AwsService.donwloadFile(nameCar);
+           byte [] bytes = awsService.donwloadFile(nameCar);
             return ConvertToBase64.ConverByteToB64(bytes);
         } catch (IOException e) {
             throw new RuntimeException(e);

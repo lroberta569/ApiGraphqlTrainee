@@ -14,25 +14,25 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 
 @Service
 @Slf4j
 public class AwsService {
 
-    @Value("${aplication.bucket.name}")
-    private static String bucketName;
+    @Value("${app.awsServices.bucketName}")
+    private String bucketName;
     @Autowired
-    private static AmazonS3 s3Cliente;
+    private AmazonS3 s3Cliente;
 
-    public static String uploadFile(String data, String name) throws IOException {
-        File fileObj = ConvertToBase64.ConvertFileToFile(data, name);
+    public  String uploadFile(String data, String name) throws IOException {
+        ImageService imageService = ImageService.get(data);
+        File fileObj = ConvertToBase64.ConvertFileToFile(imageService.getBase64(), name);
         s3Cliente.putObject(new PutObjectRequest(bucketName, name, fileObj));
         fileObj.delete();
         return "Arquivo " + name + " enviado: ";
     }
 
-    public static byte[] donwloadFile(String name) throws IOException {
+    public  byte[] donwloadFile(String name) throws IOException {
         S3Object s3Object = s3Cliente.getObject(new GetObjectRequest(bucketName, name));
         S3ObjectInputStream s3ObjectInputStream = s3Object.getObjectContent();
         byte[] bytes = IOUtils.toByteArray(s3ObjectInputStream);
