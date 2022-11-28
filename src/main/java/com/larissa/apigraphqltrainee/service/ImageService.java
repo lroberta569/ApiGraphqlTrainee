@@ -33,9 +33,9 @@ public class ImageService {
         String extension = strings[1];
 
         if("png".equals(extension)){
-            return "data:image/png:base64";
+            return "data:image/png;base64";
         }
-        return "data:image/jpeg:base64";
+        return "data:image/jpeg;base64";
     }
 
 
