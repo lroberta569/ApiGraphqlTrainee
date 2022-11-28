@@ -80,13 +80,7 @@ public class CarService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
-
-
-
-
 
 }
 

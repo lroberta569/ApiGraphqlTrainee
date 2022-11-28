@@ -39,7 +39,4 @@ public class Car {
 
     }
 
-    public void imageCarBase64(String s) {
-
-    }
 }

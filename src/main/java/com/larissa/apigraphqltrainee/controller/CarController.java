@@ -40,7 +40,7 @@ public class CarController {
         public Car findCarById(@Argument Long id) throws IOException {
             Car car  = carService.findCarById(id);
             String dataMimeType = ImageService.dataMimeType(car.getUrlImageCar());
-            car.imageCarBase64(dataMimeType + "," + carService.fetcCarImageOnAWSS3(car.getUrlImageCar()));
+            car.setImageCarBase64(dataMimeType + "," + carService.fetcCarImageOnAWSS3(car.getUrlImageCar()));
             return carService.findCarById(id);
         }
 
